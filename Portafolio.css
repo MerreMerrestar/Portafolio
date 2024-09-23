@@ -1,11 +1,20 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #333333, #000000); /* Degradado oscuro para el fondo de la página */
+    color: #e0e0e0; /* Color de texto claro para mejorar la legibilidad */
+}
+
 /* Estilos para el menú superior */
 header {
-    background-color: #333;
-    padding: 10px ;
+    background-color: #333; /* Color sólido para el menú, oscuro pero distinto del fondo */
+    padding: 10px 20px; /* Ajuste del padding para crear espacio alrededor del menú */
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Añadir sombra para mejorar la visibilidad del menú */
 }
 
 nav ul {
@@ -13,43 +22,60 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Ajusta el menú si el espacio es pequeño */
+    justify-content: flex-start; /* Alinear los elementos de izquierda a derecha */
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 15px; /* Espacio entre los elementos del menú */
+    position: relative; /* Necesario para el posicionamiento del ícono */
+    padding-left: 30px; /* Espacio para el ícono (opcional, si quieres espacio antes del texto) */
 }
 
 nav ul li a {
-    color: #fff;
+    color: #fff; /* Texto blanco para el menú */
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
     font-family: Arial, sans-serif;
     padding: 10px 15px;
-    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
-    /* Añadí la transición para color, fondo y transformación */
+    display: flex; /* Asegura que el padding esté alineado correctamente */
+    align-items: center; /* Centrar verticalmente el texto */
+    transition: color 0.3s ease, transform 0.5s ease; /* Añadir transición suave para color y transform */
 }
 
 nav ul li a:hover {
-    background-color: #555;
-    color: #ddd; /* Cambia ligeramente el color del texto */
+    color: #f8ffb8; /* Color del texto en hover */
     border-radius: 5px;
-    transform: translateY(-20px) scale(1.1); /* Subir un poco el enlace y hacer zoom */
+    transform: translateY(-5px); /* Subir ligeramente el enlace al hacer hover */
 }
 
-/* Para evitar que el contenido se superponga al menú */
-body {
-    margin: 0;
-    padding-top: 60px; /* Ajuste para el espacio del menú */
-    font-family: Arial, sans-serif;
+/* Línea blanca a la derecha del menú con texto */
+nav ul li.divider {
+    display: flex; /* Usar flexbox para alinear la línea y el texto */
+    align-items: center;
+}
+
+nav ul li.divider .line {
+    height: 20px; /* Altura de la línea */
+    width: 1px; /* Ancho de la línea */
+    background-color: #fff; /* Color de la línea */
+    margin-right: 20px; /* Espacio entre la línea y el texto */
+}
+
+nav ul li.divider .text-info {
+    display: flex;
+    flex-direction: column; /* Apilar el texto en columna */
+    color: #fff; /* Color del texto */
+}
+
+nav ul li.divider .text-info div {
+    font-size: 14px; /* Tamaño de la fuente para el texto */
 }
 
 /* Diseño responsive para pantallas más pequeñas */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column; /* Menú vertical en pantallas pequeñas */
-        align-items: center;
+        align-items: flex-start; /* Alinear elementos a la izquierda en pantallas pequeñas */
     }
 
     nav ul li {
