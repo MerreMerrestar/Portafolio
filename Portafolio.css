@@ -1,20 +1,39 @@
+/* Estilos generales */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #333333, #000000); /* Degradado oscuro para el fondo de la página */
+    background: linear-gradient(40deg, #333333, #000000); /* Degradado oscuro para el fondo de la página */
     color: #e0e0e0; /* Color de texto claro para mejorar la legibilidad */
+    background-attachment: fixed; /* Fija el fondo al hacer scroll */
+    background-size: cover; /* Asegura que el fondo cubra toda la pantalla */
+}
+
+/* Scroll suave para la navegación interna */
+html {
+    scroll-behavior: smooth; /* Suaviza el desplazamiento dentro de la misma página */
+}
+
+/* Estilos para el menú superior */
+main {
+    padding-top: 70px; /* Asegúrate de que el contenido no se sobreponga al menú */
+    margin: 0;
+    min-height: 100vh; /* Asegura que el main cubra toda la pantalla si el contenido es pequeño */
 }
 
 /* Estilos para el menú superior */
 header {
-    background-color: #333; /* Color sólido para el menú, oscuro pero distinto del fondo */
-    padding: 10px 20px; /* Ajuste del padding para crear espacio alrededor del menú */
+    background-color: rgba(51, 51, 51, 0.9); /* Color sólido semitransparente para el menú */
+    height: 50px; /* Fija la altura del header */
+    padding: 0 20px; /* Reduce el padding para que sea más compacto */
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Añadir sombra para mejorar la visibilidad del menú */
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido del header */
+    justify-content: space-between; /* Espacio entre los elementos del header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 nav ul {
@@ -23,12 +42,12 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: flex-start; /* Alinear los elementos de izquierda a derecha */
+    align-items: center; /* Centra verticalmente el contenido del menú */
 }
 
 nav ul li {
     margin: 0 15px; /* Espacio entre los elementos del menú */
     position: relative; /* Necesario para el posicionamiento del ícono */
-    padding-left: 30px; /* Espacio para el ícono (opcional, si quieres espacio antes del texto) */
 }
 
 nav ul li a {
@@ -39,7 +58,36 @@ nav ul li a {
     padding: 10px 15px;
     display: flex; /* Asegura que el padding esté alineado correctamente */
     align-items: center; /* Centrar verticalmente el texto */
-    transition: color 0.3s ease, transform 0.5s ease; /* Añadir transición suave para color y transform */
+    transition: color 0.3s ease, transform 0.5s ease, opacity 0.5s ease; /* Añadir transición suave para color, transform y opacidad */
+    position: relative; /* Necesario para la línea activa */
+}
+
+/* Línea debajo del enlace activo */
+nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f8ffb8; /* Color de la línea activa */
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f8ffb8;
+}
+
+/* Estilo para el desvanecimiento del texto, la línea y la info adicional */
+.fade-out-text {
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 nav ul li a:hover {
@@ -59,6 +107,7 @@ nav ul li.divider .line {
     width: 1px; /* Ancho de la línea */
     background-color: #fff; /* Color de la línea */
     margin-right: 20px; /* Espacio entre la línea y el texto */
+    transition: opacity 0.5s ease; /* Transición de opacidad para la línea */
 }
 
 nav ul li.divider .text-info {
@@ -69,6 +118,7 @@ nav ul li.divider .text-info {
 
 nav ul li.divider .text-info div {
     font-size: 14px; /* Tamaño de la fuente para el texto */
+    transition: opacity 0.5s ease; /* Transición de opacidad para los textos adicionales */
 }
 
 /* Diseño responsive para pantallas más pequeñas */
