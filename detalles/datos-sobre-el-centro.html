@@ -14,7 +14,7 @@
             <ul>
                 <li><a href="..\index.html">Atras</a></li>
                 <li><a href="Expectativas.html">Expectativas</a></li>
-                <li><a href="presentacion-personal.html">presentacion Personal</a></li>
+                <li><a href="presentacion-personal.html">Presentacion Personal</a></li>
                 <li><a href="datos-sobre-el-centro.html">Datos del Centro</a></li>
                 <li class="divider">
                     <span class="line"></span> <!-- Línea divisoria -->
@@ -28,21 +28,40 @@
     </header>
     <main>
     </main>
-    
-
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const links = document.querySelectorAll('nav ul li a');
-            
+            const dividerElements = document.querySelectorAll('.divider, .divider .line, .divider .text-info div');
+
+            // Función para manejar el click en los enlaces del menú
             links.forEach(function (link) {
-                link.addEventListener('click', function () {
-                    // Remover la clase "active" de todos los enlaces
+                link.addEventListener('click', function (event) {
+                    const href = link.getAttribute('href');
+                    if (href && href[0] !== '#') { // Solo para enlaces externos
+                        event.preventDefault();
+
+                        // Guardar el enlace activo en localStorage
+                        localStorage.setItem('activeLink', href);
+
+                        setTimeout(function () {
+                            window.location = href;
+                        }, 500); // Duración del desvanecimiento
+                    }
+
+                    // Remover la clase "active" de todos los enlaces y agregarla al clicado
                     links.forEach(l => l.classList.remove('active'));
-                    
-                    // Agregar la clase "active" al enlace clicado
                     link.classList.add('active');
                 });
             });
+
+            // Recuperar el estado del enlace activo desde localStorage
+            const activeLink = localStorage.getItem('activeLink');
+            if (activeLink) {
+                const activeElement = document.querySelector(`nav ul li a[href="${activeLink}"]`);
+                if (activeElement) {
+                    activeElement.classList.add('active');
+                }
+            }
         });
     </script>
 </body>

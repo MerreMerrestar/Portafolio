@@ -14,7 +14,7 @@
                <ul>
                 <li><a href="..\index.html">Atras</a></li>
                 <li><a href="Introduccion al portafolio.html">Introduccion Portafolio</a></li>
-                <li><a href="descripccion.html">Descripcion del Portafolio</a></li>
+                <li><a href="descripcion-del-portafolio.html">Descripcion del Portafolio</a></li>
                 <li class="divider">
                     <span class="line"></span> <!-- Línea divisoria -->
                     <div class="text-info">
@@ -29,45 +29,40 @@
         <h1>algo</h1>
         <p>hdokadncisnd</p>
     </main>
-    
-
-    <!-- Script para desvanecimiento -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const links = document.querySelectorAll('nav ul li a');
             const dividerElements = document.querySelectorAll('.divider, .divider .line, .divider .text-info div');
-            
+
+            // Función para manejar el click en los enlaces del menú
             links.forEach(function (link) {
                 link.addEventListener('click', function (event) {
                     const href = link.getAttribute('href');
                     if (href && href[0] !== '#') { // Solo para enlaces externos
                         event.preventDefault();
-                        
-                        // Desvanece enlaces, línea y textos de la información del profesor
-                        links.forEach(l => l.classList.add('fade-out-text'));
-                        dividerElements.forEach(el => el.classList.add('fade-out-text'));
+
+                        // Guardar el enlace activo en localStorage
+                        localStorage.setItem('activeLink', href);
 
                         setTimeout(function () {
                             window.location = href;
                         }, 500); // Duración del desvanecimiento
                     }
-                });
-            });
-        });
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const links = document.querySelectorAll('nav ul li a');
-            
-            links.forEach(function (link) {
-                link.addEventListener('click', function () {
-                    // Remover la clase "active" de todos los enlaces
+
+                    // Remover la clase "active" de todos los enlaces y agregarla al clicado
                     links.forEach(l => l.classList.remove('active'));
-                    
-                    // Agregar la clase "active" al enlace clicado
                     link.classList.add('active');
                 });
             });
+
+            // Recuperar el estado del enlace activo desde localStorage
+            const activeLink = localStorage.getItem('activeLink');
+            if (activeLink) {
+                const activeElement = document.querySelector(`nav ul li a[href="${activeLink}"]`);
+                if (activeElement) {
+                    activeElement.classList.add('active');
+                }
+            }
         });
     </script>
 </body>

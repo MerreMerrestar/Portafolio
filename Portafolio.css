@@ -21,6 +21,45 @@ main {
     min-height: 100vh; /* Asegura que el main cubra toda la pantalla si el contenido es pequeño */
 }
 
+/* Estilo para centrar el título y la línea divisoria */
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+
+.section-title h1 {
+    font-size: 36px; /* Tamaño del título */
+    font-family: 'Arial', sans-serif; /* Puedes cambiar la fuente aquí */
+    margin-bottom: 10px;
+}
+.section-title h3 {
+    color: #a3a3a3;
+    font-size: 20px;
+}
+
+.section-title .line {
+    width: 600px; /* Ajusta el ancho de la línea */
+    height: 4px; /* Grosor de la línea */
+    background-color: #f8ffb8; /* Color de la línea */
+    margin: 0 auto; /* Para centrar la línea */
+}
+
+/* Estilo para el texto con una fuente linda */
+.content p {
+    font-family: 'Pacifico', cursive; /* Cambia a una fuente atractiva */
+    font-size: 18px;
+    color: #e0e0e0;
+    text-align: center;
+    border-bottom: 2px solid #3f3f3f; /* Línea de color que combine con el diseño */
+    padding-bottom: 10px; /* Espacio entre el texto y la línea */
+    margin-bottom: 20px; /* Espacio adicional debajo de cada párrafo */
+}
+
+/* Asegúrate de importar la fuente si es necesario */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
 /* Estilos para el menú superior */
 header {
     background-color: rgba(51, 51, 51, 0.9); /* Color sólido semitransparente para el menú */
@@ -73,6 +112,7 @@ nav ul li a.active::after {
     background-color: #f8ffb8; /* Color de la línea activa */
     transition: width 0.3s ease;
 }
+
 
 nav ul li a:hover::after {
     content: '';
