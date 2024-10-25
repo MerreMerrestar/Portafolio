@@ -20,6 +20,212 @@ main {
     margin: 0;
     min-height: 100vh; /* Asegura que el main cubra toda la pantalla si el contenido es pequeño */
 }
+/* Estilo general de la portada */
+main.arroz .portada {
+    display: flex;
+    flex-direction: column; /* Los elementos (imagen y texto) se apilan verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    min-height: 100vh; /* Asegura que cubra toda la pantalla */
+}
+
+/* Estilo de la imagen */
+main.arroz .portada .foto-portada {
+    width: 600px; /* Ajusta el tamaño de la imagen */
+    height: 600px;
+    border-radius: 50%; /* Hace la imagen redonda */
+    margin-bottom: 20px; /* Espacio entre la imagen y el texto */
+}
+
+/* Estilo del nombre */
+main.arroz .portada .nombre {
+    font-size: 36px; /* Tamaño más grande para el nombre */
+    font-family: 'Pacifico', cursive; /* Fuente atractiva */
+    color: #e0e0e0;
+    text-align: center;
+    margin: 0; /* Quita márgenes adicionales */
+}
+
+/* Estilo del curso */
+main.arroz .portada .curso {
+    font-size: 24px; /* Tamaño más pequeño para el curso */
+    font-family: Arial, sans-serif; /* Fuente más sencilla */
+    color: #f8ffb8; /* Combina con los colores de la página */
+    text-align: center;
+    margin: 10px 0 0 0; /* Ajusta el espacio entre el nombre y el curso */
+}
+/* Estilo para la sección de expectativas */
+main.detallesExpectativas {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    min-height: 100vh; /* Asegura que ocupe toda la pantalla */
+    background: linear-gradient(40deg, #1a1a1a, #333333); /* Fondo oscuro y elegante */
+    color: #f0f0f0; /* Texto claro */
+    padding: 20px;
+}
+
+/* Estilo del título */
+main.detallesExpectativas h1 {
+    font-size: 36px; /* Tamaño grande para el título */
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 20px;
+    color: #f8ffb8; /* Color del título */
+    text-align: center;
+}
+
+/* Estilo del contenido de expectativas */
+main.detallesExpectativas .expectativas-content {
+    font-size: 20px; /* Tamaño mediano para el contenido */
+    line-height: 1.6; /* Espaciado entre líneas */
+    max-width: 800px; /* Limitar el ancho del contenido */
+    text-align: justify; /* Justificar el texto para alinearlo a ambos lados */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente para resaltar el texto */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    color: #e0e0e0; /* Color de texto */
+}
+
+/* Estilo general para la sección de presentación personal */
+main.presentacionPersonal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(145deg, #2b2b2b, #444444); /* Fondo con un degradado más suave y elegante */
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif; /* Fuente más moderna y profesional */
+    text-align: center; /* Centra todo el texto */
+}
+
+/* Estilo del contenedor de la presentación */
+main.presentacionPersonal .personal-info {
+    background-color: rgba(255, 255, 255, 0.08); /* Fondo semitransparente */
+    padding: 30px;
+    border-radius: 10px; /* Bordes redondeados para un look más suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra sutil para darle profundidad */
+    max-width: 700px;
+    width: 100%; /* Asegura que ocupe el 100% del contenedor */
+}
+
+/* Estilo del título */
+main.presentacionPersonal h1 {
+    font-size: 32px; /* Tamaño del título */
+    color: #ffd700; /* Un amarillo dorado llamativo */
+    margin-bottom: 15px; /* Espacio debajo del título */
+}
+
+/* Estilo para el nombre */
+main.presentacionPersonal .nombre {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Estilo para el curso */
+main.presentacionPersonal .curso {
+    font-size: 20px;
+    font-weight: lighter;
+    margin-bottom: 20px;
+    color: #d1d1d1; /* Un gris suave para el texto del curso */
+}
+
+main.presentacionPersonal .foto {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%; /* Mantiene la imagen completamente circular */
+    margin-bottom: 20px;
+    border: 4px solid #2460cf; /* Borde dorado */
+    object-fit: contain; /* Ajusta la imagen para que no se corte y mantenga sus proporciones */
+}
+
+
+/* Estilo para el texto de la presentación */
+main.presentacionPersonal p {
+    font-size: 18px;
+    line-height: 1.7; /* Mejor espaciado entre líneas */
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+main.introduccionPortafolio {
+    max-width: 900px;
+    margin: 80px auto; /* Centrado y margen superior */
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo ligeramente transparente */
+    border-left: 6px solid #98cf01; /* Borde lateral dorado */
+    border-radius: 8px;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+/* Estilo del título dentro de la introducción */
+main.introduccionPortafolio h2 {
+    font-size: 32px;
+    color: #98cf01; /* Color que coincide con el borde */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Párrafo con un estilo más sobrio */
+main.introduccionPortafolio p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify; /* Justificar el texto para darle un aspecto formal */
+    color: #e0e0e0;
+}
+main.datosCentro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    padding-top: 100px; /* Ajusta el espacio superior para despejar el menú */
+}
+
+/* Estilo de cada tarjeta */
+main.datosCentro .tarjeta {
+    background-color: #f9f9f9; /* Fondo claro para las tarjetas */
+    border: 2px solid #ffd700; /* Borde dorado para las tarjetas */
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    width: 80%; /* Ajuste para el tamaño de las tarjetas */
+    max-width: 600px; /* Ancho máximo */
+    padding: 15px;
+    text-align: left; /* Alineación del texto */
+}
+
+/* Título dentro de cada tarjeta */
+main.datosCentro .tarjeta h2 {
+    color: #ffd700;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ddd; /* Línea decorativa debajo del título */
+    padding-bottom: 5px;
+}
+
+/* Texto de contenido dentro de cada tarjeta */
+main.datosCentro .tarjeta p {
+    color: #333;
+    font-size: 1em;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0;
+}
+
+main.periodo .content {
+    padding-left: 40px; /* Ajusta el espacio a la izquierda según tus necesidades */
+    padding-right: 40px; /* Ajusta el espacio a la derecha según tus necesidades */
+}
+
+
+
 
 /* Estilo para centrar el título y la línea divisoria */
 .section-title {
