@@ -1,5 +1,6 @@
 /* Estilos generales */
 body {
+    overflow-y: scroll;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -189,8 +190,8 @@ main.datosCentro {
     padding-top: 100px; /* Ajusta el espacio superior para despejar el menú */
 }
 
-/* Estilo de cada tarjeta */
-main.datosCentro .tarjeta {
+/* Estilo de cada tarjetaABC */
+main.datosCentro .tarjetaABC {
     background-color: #f9f9f9; /* Fondo claro para las tarjetas */
     border: 2px solid #ffd700; /* Borde dorado para las tarjetas */
     border-radius: 12px;
@@ -199,10 +200,11 @@ main.datosCentro .tarjeta {
     max-width: 600px; /* Ancho máximo */
     padding: 15px;
     text-align: left; /* Alineación del texto */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Título dentro de cada tarjeta */
-main.datosCentro .tarjeta h2 {
+main.datosCentro .tarjetaABC h2 {
     color: #ffd700;
     font-size: 1.5em;
     margin-bottom: 10px;
@@ -211,12 +213,17 @@ main.datosCentro .tarjeta h2 {
 }
 
 /* Texto de contenido dentro de cada tarjeta */
-main.datosCentro .tarjeta p {
+main.datosCentro .tarjetaABC p {
     color: #333;
     font-size: 1em;
     line-height: 1.6;
     text-align: justify;
     margin: 0;
+}
+.tarjetaABC:hover{
+    transition-duration: 0.3s;
+    transform: translateX(10px) ; /* Levanta la tarjeta al pasar el cursor */
+    box-shadow: 0px 12px 20px rgba(46, 49, 15, 0.5); /* Sombra más pronunciada */
 }
 
 main.periodo .content {
@@ -366,6 +373,154 @@ nav ul li.divider .text-info div {
     font-size: 14px; /* Tamaño de la fuente para el texto */
     transition: opacity 0.5s ease; /* Transición de opacidad para los textos adicionales */
 }
+main.descripcionP {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px; /* Espacio entre tarjetas */
+    padding: 30px;
+    background: linear-gradient(135deg, #292929, #3b3b3b); /* Fondo con degradado oscuro */
+    min-height: 100vh;
+}
+
+main.descripcionP .tarjeta {
+    background-color: rgba(255, 255, 255, 0.05); /* Fondo sutilmente transparente */
+    border: 1px solid #4a90e2; /* Borde de color azul tenue */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más profunda */
+    width: 90%; /* Anchura responsiva de la tarjeta */
+    max-width: 600px; /* Anchura máxima de cada tarjeta */
+    padding: 25px; /* Espaciado interno */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main.descripcionP .tarjeta:hover {
+    transform: translateY(-5px); /* Levanta la tarjeta al pasar el cursor */
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
+}
+
+main.descripcionP .tarjeta h2 {
+    font-size: 24px;
+    color: #4a90e2; /* Color azul para el título */
+    margin-bottom: 12px;
+    border-bottom: 2px solid #4a90e2; /* Línea decorativa debajo del título */
+    padding-bottom: 5px;
+}
+
+main.descripcionP .tarjeta p {
+    font-size: 18px;
+    line-height: 1.6; /* Espaciado de línea para mejorar la legibilidad */
+    color: #e0e0e0;
+    text-align: justify;
+    margin: 0;
+}
+/* otra tarjeta que permite ver mejor un apartado mas importante */
+main.descripcionP .tarjeta2 {
+    background-color: rgba(255, 255, 255, 0.05); /* Fondo sutilmente transparente */
+    border: 1px solid #4d22b3; /* Borde de color azul tenue */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más profunda */
+    width: 90%; /* Anchura responsiva de la tarjeta */
+    max-width: 600px; /* Anchura máxima de cada tarjeta */
+    padding: 25px; /* Espaciado interno */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main.descripcionP .tarjeta2:hover {
+    transform: translateY(-10px); /* Levanta la tarjeta al pasar el cursor */
+    box-shadow: 0px 12px 20px rgba(66, 0, 0, 0.5); /* Sombra más pronunciada */
+}
+
+main.descripcionP .tarjeta2 h2 {
+    font-size: 24px;
+    color: #4a90e2; /* Color azul para el título */
+    margin-bottom: 12px;
+    border-bottom: 2px solid #4a90e2; /* Línea decorativa debajo del título */
+    padding-bottom: 5px;
+}
+
+main.descripcionP .tarjeta2 p {
+    font-size: 18px;
+    line-height: 1.6; /* Espaciado de línea para mejorar la legibilidad */
+    color: #e0e0e0;
+    text-align: justify;
+    margin: 0;
+}
+
+/* Separa la primera tarjeta del menu */
+
+main.descripcionP .tarjeta2t {
+    margin-top: 50px; /* Ajusta el valor según el espacio deseado */
+    background-color: rgba(255, 255, 255, 0.05); /* Fondo sutilmente transparente */
+    border: 1px solid #4d22b3; /* Borde de color azul tenue */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más profunda */
+    width: 90%; /* Anchura responsiva de la tarjeta */
+    max-width: 600px; /* Anchura máxima de cada tarjeta */
+    padding: 25px; /* Espaciado interno */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main.descripcionP .tarjeta2t:hover {
+    transform: translateY(-10px); /* Levanta la tarjeta al pasar el cursor */
+    box-shadow: 0px 12px 20px rgba(66, 0, 0, 0.5); /* Sombra más pronunciada */
+}
+
+main.descripcionP .tarjeta2t h2 {
+    font-size: 24px;
+    color: #4a90e2; /* Color azul para el título */
+    margin-bottom: 12px;
+    border-bottom: 2px solid #4a90e2; /* Línea decorativa debajo del título */
+    padding-bottom: 5px;
+}
+
+main.descripcionP .tarjeta2t p {
+    font-size: 18px;
+    line-height: 1.6; /* Espaciado de línea para mejorar la legibilidad */
+    color: #e0e0e0;
+    text-align: justify;
+    margin: 0;
+}
+
+
+main.descripcionP .tarjetah {
+    background-color: rgba(218, 218, 218, 0.05); /* Fondo sutilmente transparente */
+    border: 1px solid #28115c; /* Borde de color azul tenue */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0px 8px 16px rgba(94, 99, 22, 0.3); /* Sombra más profunda */
+    width: 90%; /* Anchura responsiva de la tarjeta */
+    max-width: 600px; /* Anchura máxima de cada tarjeta */
+    padding: 25px; /* Espaciado interno */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main.descripcionP .tarjetah:hover {
+    transform: translateY(-10px); /* Levanta la tarjeta al pasar el cursor */
+    box-shadow: 0px 12px 20px rgba(3, 22, 75, 0.5); /* Sombra más pronunciada */
+}
+
+main.descripcionP .tarjetah h2 {
+    font-size: 24px;
+    color: #2e3ad8; /* Color azul para el título */
+    margin-bottom: 12px;
+    border-bottom: 2px solid #2a5c96; /* Línea decorativa debajo del título */
+    padding-bottom: 5px;
+}
+
+main.descripcionP .tarjetah p {
+    font-size: 18px;
+    line-height: 1.6; /* Espaciado de línea para mejorar la legibilidad */
+    color: #e0e0e0;
+    text-align: justify;
+    margin: 0;
+}
+.enlace1{
+    color: #f8ffb8;
+}
+
+
+
+
 
 /* Diseño responsive para pantallas más pequeñas */
 @media (max-width: 768px) {
