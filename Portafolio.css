@@ -1,3 +1,8 @@
+/* Establecer un zoom para todos los archivos HTML */
+html {
+    zoom: 90%; /* Ajusta el valor según el nivel de zoom deseado */
+}
+
 /* Estilos generales */
 body {
     overflow-y: scroll;
@@ -8,6 +13,9 @@ body {
     color: #e0e0e0; /* Color de texto claro para mejorar la legibilidad */
     background-attachment: fixed; /* Fija el fondo al hacer scroll */
     background-size: cover; /* Asegura que el fondo cubra toda la pantalla */
+}
+.a-p{
+    color: #e5ff00;
 }
 
 /* Scroll suave para la navegación interna */
@@ -227,12 +235,22 @@ main.datosCentro .tarjetaABC p {
 }
 
 main.periodo .content {
-    padding-left: 40px; /* Ajusta el espacio a la izquierda según tus necesidades */
-    padding-right: 40px; /* Ajusta el espacio a la derecha según tus necesidades */
+    padding-left: 150px; /* Ajusta el espacio a la izquierda según tus necesidades */
+    padding-right: 150px; /* Ajusta el espacio a la derecha según tus necesidades */
 }
 
+.content {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las imágenes se envuelvan si no caben en una sola línea */
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    gap: 20px; /* Espacio entre las imágenes */
+}
 
-
+.content img {
+    max-width: 30%; /* Reduce el tamaño máximo de las imágenes al 50% */
+    height: auto;
+    flex: 1 1 auto; /* Permite que las imágenes se ajusten automáticamente */
+}
 
 /* Estilo para centrar el título y la línea divisoria */
 .section-title {
